@@ -44,7 +44,7 @@ class TaskControllerTest {
         Task task = new Task(1L, "Test Task", "This is a test task");
         when(taskService.createTask(any(Task.class))).thenReturn(task);
 
-        mockMvc.perform(post("/tasks/new")
+        mockMvc.perform(post("/tasks")
                         .contentType("application/json")
                         .content("{\"title\":\"Test Task\",\"description\":\"This is a test task\"}"))
                 .andExpect(status().isCreated())
@@ -61,7 +61,7 @@ class TaskControllerTest {
         List<Task> tasks = Arrays.asList(task1, task2);
         when(taskService.getAllTasks()).thenReturn(tasks);
 
-        mockMvc.perform(get("/tasks/all"))
+        mockMvc.perform(get("/tasks"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.tasks[0].id").value(1))
                 .andExpect(jsonPath("$.tasks[1].id").value(2));
@@ -72,7 +72,7 @@ class TaskControllerTest {
         // Simula que el servicio elimina la tarea
         doNothing().when(taskService).deleteTask(1L);
 
-        mockMvc.perform(delete("/tasks/delete/1"))
+        mockMvc.perform(delete("/tasks/1"))
                 .andExpect(status().isNoContent());
 
         verify(taskService, times(1)).deleteTask(1L);
