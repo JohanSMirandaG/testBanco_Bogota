@@ -1,0 +1,8 @@
+{
+  "/tasks": {
+    "target": "localhost:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

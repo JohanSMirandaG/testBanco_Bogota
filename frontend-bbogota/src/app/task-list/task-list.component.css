@@ -1,0 +1,66 @@
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f8ff; /* Azul claro */
+  padding: 20px;
+}
+
+h2 {
+  color: #00509e; /* Azul más oscuro */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.task-item {
+  background-color: #e0f7fa; /* Azul más claro */
+  border: 1px solid #b2ebf2; /* Bordes sutiles */
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #007acc; /* Texto azul */
+}
+
+.task-item strong {
+  font-weight: bold;
+  color: #00509e; /* Título más oscuro */
+}
+
+.no-tasks {
+  color: #007acc; /* Azul */
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilos del botón Volver */
+.back-button {
+  background-color: #00509e; /* Azul oscuro */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #003f73; /* Azul más oscuro */
+}
+
+.back-button:focus {
+  outline: none;
+}
