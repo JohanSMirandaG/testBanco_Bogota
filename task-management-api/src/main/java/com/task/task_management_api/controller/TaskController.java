@@ -18,7 +18,7 @@ public class TaskController {
     private TaskService taskService;
 
     // Crear una nueva tarea (POST)
-    @PostMapping("/new")
+    @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         try {
             Task createdTask = taskService.createTask(task);
@@ -30,14 +30,14 @@ public class TaskController {
     }
 
     // Obtener todas las tareas (GET)
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<TaskResponseDTO> getAllTasks() {
         List<Task> tasks = taskService.getAllTasks();
         return new ResponseEntity<>(new TaskResponseDTO(tasks), HttpStatus.OK); // 200 OK
     }
 
     // Eliminar una tarea por ID
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204 No Content
