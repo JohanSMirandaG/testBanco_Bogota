@@ -27,6 +27,19 @@ export class HomeComponent {
     });
   }
 
+  goToDeleteTask() {
+    this.http.get<{ tasks: any[] }>('http://localhost:8080/tasks').pipe(
+      catchError(error => {
+        console.error('Error en la solicitud:', error);
+        return of({ tasks: [] }); // Retorna un array vacío en caso de error
+      })
+    ).subscribe(response => {
+      if (response && response.tasks) {
+        this.router.navigate(['/delete-task'], { state: { tasks: response.tasks } });
+      }
+    });
+  }
+
   goToAddTask() {
     this.router.navigate(['/add-task']);
   }

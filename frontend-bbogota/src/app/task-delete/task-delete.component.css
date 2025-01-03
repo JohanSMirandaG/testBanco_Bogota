@@ -1,0 +1,74 @@
+/* Centrar todo el contenido */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centra horizontalmente */
+  justify-content: center;  /* Centra verticalmente */
+  height: 100vh;  /* Toma toda la altura de la pantalla */
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  color: #003366; /* Azul oscuro */
+  margin-bottom: 30px; /* Espacio debajo del título */
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.task-item {
+  background-color: #f2f2f2;
+  margin: 15px 0; /* Mayor margen entre tareas */
+  padding: 15px;  /* Mayor relleno dentro de cada tarea */
+  border-radius: 8px;  /* Bordes más redondeados */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item div {
+  margin-right: 20px;  /* Separa el texto de la tarea del botón */
+  flex-grow: 1;  /* Hace que el texto ocupe todo el espacio disponible */
+  text-align: left;  /* Alinea el texto a la izquierda */
+}
+
+.delete-button {
+  background-color: #ff5733; /* Rojo anaranjado para eliminar */
+  color: white;
+  border: none;
+  padding: 10px 18px;  /* Más relleno para el botón */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #cc4628; /* Rojo más oscuro */
+}
+
+.no-tasks {
+  font-size: 18px;
+  color: #777;
+  margin-top: 20px; /* Espacio arriba del mensaje de no tareas */
+}
+
+.back-button {
+  background-color: #003366; /* Azul */
+  color: white;
+  border: none;
+  padding: 14px 24px; /* Más relleno en el botón */
+  border-radius: 5px;
+  margin-top: 30px; /* Más espacio entre la lista de tareas y el botón de volver */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #002a4d; /* Azul más oscuro */
+}

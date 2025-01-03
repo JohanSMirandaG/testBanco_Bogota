@@ -31,7 +31,6 @@ export class TaskFormComponent {
       })
     ).subscribe(response => {
       if (response) {
-        console.log('Tarea agregada con éxito:', response);
         this.router.navigate(['/']);
       }
     });
